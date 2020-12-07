@@ -31,7 +31,7 @@ push-image: docker-image
 
 .PHONY: clean
 clean: clean-example
-	kubectl delete secret --all; kubectl delete deploy --all; kubectl delete  mutatingwebhookconfigurations.admissionregistration.k8s.io tigera-init-injector; kubectl delete svc --all
+	kubectl delete secret --all -n tigera-init-injector; kubectl delete deploy --all -n tigera-init-injector; kubectl delete  mutatingwebhookconfigurations.admissionregistration.k8s.io tigera-init-injector; kubectl delete svc --all -n tigera-init-injector
 
 .PHONY: deploy
 deploy:

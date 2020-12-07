@@ -68,9 +68,9 @@ func applySecurityDefaults(req *v1beta1.AdmissionRequest) ([]patchOperation, err
 
 	initContainer := corev1.Container{
 
-		Name:    "hello",
+		Name:    "my-init-container",
 		Image:   "busybox",
-		Command: []string{"sh", "-c", "echo I am running as user $(id -u)"},
+		Command: []string{"sh", "-c", "echo I am running an init container"},
 	}
 	initContainers := dpl.Spec.Template.Spec.InitContainers
 	hasContainer := false

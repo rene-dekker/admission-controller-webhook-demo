@@ -15,14 +15,10 @@ spec:
       labels:
         app: mypod
     spec:
-      initContainers:
-        - name: myinit
-          image: busybox
-          command: ["sh", "-c", "echo I am running as user $(id -u)"]
       containers:
         - name: busybox
           image: busybox
-          command: ["sh", "-c", "echo I am running as user $(id -u)"]
+          command: ["sh", "-c", "sleep 9999"]
 
 ---
 
@@ -46,4 +42,4 @@ spec:
       containers:
         - name: busybox
           image: busybox
-          command: ["sh", "-c", "echo I am running as user $(id -u)"]
+          command: ["sh", "-c", "sleep 9999"]
